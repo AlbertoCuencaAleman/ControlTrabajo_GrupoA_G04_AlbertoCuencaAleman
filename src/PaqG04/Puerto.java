@@ -47,4 +47,15 @@ public class Puerto implements Serializable {
         return "En el hub "+nHub+" hay "+resultado+" contenedores del país "+pais;
     }
 
+    public String buscarContenedores(int prioridad){
+        String resultado="";
+        for(int i=0;i<3;i++){
+            resultado+="EL HUB "+ i +" TIENE: \n";
+            resultado+=hubs[i].buscarContenedores(prioridad);
+            resultado+="\n";
+
+        }
+        return resultado;
+    }
+
 }

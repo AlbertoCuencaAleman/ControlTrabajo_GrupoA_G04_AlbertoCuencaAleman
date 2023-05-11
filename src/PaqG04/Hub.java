@@ -108,4 +108,26 @@ public class Hub implements Serializable {
         }
         return cont;
     }
+
+    public String buscarContenedores(int prioridad){
+        int cont;
+        int f=contenedores.length;
+        String resultado="";
+        for (int c = 0; c < contenedores[f].length; c++) {
+            if(contenedores[contenedores.length][c].getPrioridad()==prioridad){
+                resultado+="El contenedor con:\n";
+                resultado+="Id: "+contenedores[f][c].id+"\n";
+                resultado+="Peso: "+contenedores[f][c].peso+"\n";
+                resultado+="Control de aduanas: "+contenedores[f][c].aduanas+"\n";
+                resultado+="Empresa que lo envía: "+contenedores[f][c].empresaEnvia+"\n";
+                resultado+="\n";
+            }
+
+        }
+        if(resultado.equals("")){
+            return "No hay contendores de esa prioridad en la base del hub";
+        }
+        return resultado;
+    }
+
 }
