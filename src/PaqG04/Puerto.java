@@ -1,3 +1,4 @@
+//Alberto Cuenca Aleman
 package PaqG04;
 
 import java.io.Serializable;
@@ -53,7 +54,6 @@ public class Puerto implements Serializable {
             resultado+="EL HUB "+ i +" TIENE: \n";
             resultado+=hubs[i].buscarContenedores(prioridad);
             resultado+="\n";
-
         }
         return resultado;
     }

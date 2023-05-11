@@ -1,3 +1,4 @@
+//Alberto Cuenca Aleman
 package PaqG04;
 
 import java.io.Serializable;
@@ -111,18 +112,18 @@ public class Hub implements Serializable {
 
     public String buscarContenedores(int prioridad){
         int cont;
-        int f=contenedores.length;
+        //int f=contenedores.length;
+        int f=contenedores.length-1;
         String resultado="";
         for (int c = 0; c < contenedores[f].length; c++) {
-            if(contenedores[contenedores.length][c].getPrioridad()==prioridad){
-                resultado+="El contenedor con:\n";
-                resultado+="Id: "+contenedores[f][c].id+"\n";
-                resultado+="Peso: "+contenedores[f][c].peso+"\n";
-                resultado+="Control de aduanas: "+contenedores[f][c].aduanas+"\n";
-                resultado+="Empresa que lo envía: "+contenedores[f][c].empresaEnvia+"\n";
+            if(contenedores[f][c].getPrioridad()==prioridad){
+                resultado+="El contenedor con ";
+                resultado+="id: "+contenedores[f][c].id+", ";
+                resultado+="peso: "+contenedores[f][c].peso+", ";
+                resultado+="control de aduanas: "+contenedores[f][c].aduanas+", ";
+                resultado+="empresa que lo envía: "+contenedores[f][c].empresaEnvia+".";
                 resultado+="\n";
             }
-
         }
         if(resultado.equals("")){
             return "No hay contendores de esa prioridad en la base del hub";
